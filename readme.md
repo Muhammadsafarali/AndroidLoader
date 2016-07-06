@@ -1,3 +1,4 @@
 # Описание
 Это приложение, в котором используется лоадер. Лоадер просто определяет текущее время, но делает он это асинхронно и с учетом формата.</br>
-Статья об Loader и AsyncTaskLoader по [Example]:http://google.com/
+Статья об Loader и AsyncTaskLoader по 
+[Example]:http://google.com/
