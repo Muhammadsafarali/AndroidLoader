@@ -3,6 +3,7 @@ package ru.norbit.loader;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Loader;
+import android.database.ContentObserver;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -84,5 +85,14 @@ public class MainActivity extends Activity implements LoaderCallbacks<String> {
     }
 
     public void observerClick(View view) {
+        Log.d(LOG_TAG, "observerClick");
+        Loader<String> loader = getLoaderManager().getLoader(LOADER_TIME_ID);
+        final ContentObserver observer = loader.new ForceLoadContentObserver();
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                observer.dispatchChange(false);
+            }
+        }, 5000);
     }
 }
