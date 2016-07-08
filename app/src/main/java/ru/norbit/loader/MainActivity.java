@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements LoaderCallbacks<String> {
 
         Loader<String> loader = null;
         if (id == LOADER_TIME_ID) {
-            loader = new TimeLoader(this, args);
+            loader = new TimeAsyncLoader(this, args);
             Log.d(LOG_TAG, "onCreateLoader: " + loader.hashCode());
         }
         return loader;
